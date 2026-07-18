@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     # Third-party Apps
     "rest_framework",
     "rest_framework_simplejwt",
+    "rest_framework_simplejwt.token_blacklist",
     "django_filters",
     "drf_spectacular",
     "corsheaders",
+    "drf_yasg",
 
     # Local Apps
     "accounts",
@@ -60,6 +62,7 @@ INSTALLED_APPS = [
     "listings",
     "property_images",
     "categories",
+    
 ]
 
 MIDDLEWARE = [
@@ -180,3 +183,19 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+# # Email Configuration
+
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+# EMAIL_HOST = "smtp.gmail.com"
+
+# EMAIL_PORT = 587
+
+# EMAIL_USE_TLS = True
+
+# EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+
+# EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
