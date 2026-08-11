@@ -22,7 +22,7 @@ class ListListingView(ListAPIView):
         "city",
         "state",
         "listing_type",
-        "property_type",
+        # "property_type",
         "bedrooms",
         "bathrooms",
         "is_available",

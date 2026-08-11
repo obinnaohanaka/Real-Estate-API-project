@@ -1,4 +1,4 @@
-from rest_framework import status
+from rest_framework import status, serializers
 from rest_framework.generics import UpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -6,8 +6,21 @@ from rest_framework.response import Response
 from inspections.models import InspectionBooking
 
 
+class InspectionStatusUpdateSerializer(serializers.Serializer):
+    status = serializers.ChoiceField(
+        choices=[
+            "PENDING",
+            "APPROVED",
+            "REJECTED",
+            "COMPLETED",
+        ]
+    )
+
+
 class UpdateInspectionStatusView(UpdateAPIView):
     permission_classes = [IsAuthenticated]
+    queryset = InspectionBooking.objects.all()
+    serializer_class = InspectionStatusUpdateSerializer
 
     def patch(self, request, pk):
         try:
