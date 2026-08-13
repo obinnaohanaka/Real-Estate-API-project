@@ -263,11 +263,16 @@ SWAGGER_SETTINGS = {
             "type": "apiKey",
             "name": "Authorization",
             "in": "header",
-            "description": (
-                "Enter: Bearer <your access token>"
-            ),
+            "description": "Enter: Bearer <your access token>",
         }
     },
+
+    "SECURITY_REQUIREMENTS": [
+        {
+            "Bearer": []
+        }
+    ],
+
     "USE_SESSION_AUTH": False,
 }
 
