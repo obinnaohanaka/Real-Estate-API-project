@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "corsheaders",
     "drf_yasg",
-    "drf_spectacular.utils",
+   
 
     # Local Apps
     "accounts",
