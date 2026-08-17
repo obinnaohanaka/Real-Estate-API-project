@@ -28,7 +28,7 @@ schema_view = get_schema_view(
         title="Real Estate Sales & Leasing API",
         default_version="v1",
         description="API documentation for the Real Estate Sales & Leasing Management System",
-        contact=openapi.Contact(email="admin@example.com"),
+        contact=openapi.Contact(email="Obinna.c.ohanaka@gmail.com"),
         license=openapi.License(name="MIT License"),
     ),
     public=True,
@@ -50,6 +50,8 @@ urlpatterns = [
     path("redoc/",schema_view.with_ui("redoc", cache_timeout=0),name="schema-redoc"),
     path("",schema_view.with_ui("redoc", cache_timeout=0),name="schema-redoc")
 ]
+
+
 
 if settings.DEBUG:
     urlpatterns += static(
