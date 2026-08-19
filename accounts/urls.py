@@ -12,9 +12,5 @@ urlpatterns = [
     path("auth/logout/", LogoutView.as_view(), name="logout"),
     path("auth/profile/", ProfileView.as_view(), name="profile"),
 
-    path(
-        "users/<int:pk>/delete/",
-        DeleteUserView.as_view(),
-        name="delete-user",
-    ),
+    path("users/<int:pk>/delete/",DeleteUserView.as_view(),name="delete-user"),
 ]
