@@ -22,6 +22,9 @@ class UpdateInspectionStatusView(UpdateAPIView):
     queryset = InspectionBooking.objects.all()
     serializer_class = InspectionStatusUpdateSerializer
 
+    def put(self, request, pk):
+        return self.patch(request, pk)
+
     def patch(self, request, pk):
         try:
             booking = InspectionBooking.objects.get(pk=pk)
