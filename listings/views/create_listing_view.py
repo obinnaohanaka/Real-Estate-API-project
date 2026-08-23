@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
 
 from agents.models import AgentProfile
 from listings.serializers.listing_serializer import ListingSerializer
@@ -10,6 +11,7 @@ from listings.serializers.listing_serializer import ListingSerializer
 class CreateListingView(APIView):
     permission_classes = [IsAuthenticated]
 
+    @swagger_auto_schema(request_body=ListingSerializer)
     def post(self, request):
         try:
             agent_profile = AgentProfile.objects.get(user=request.user)
